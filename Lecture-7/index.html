@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="n1">Number 1 : </label>
+        <input type="number" id = "n1">
+        <br><br>
+        <label for="n2">Number 2:</label>
+        <input type="number" id="n2">
+        <br><br>
+        <label for="n3">Number 3:</label>
+        <input type="number" id="n3">   
+        <br><br>
+        <button type="button" id="min">Minimum</button>
+        <button type="button" id ="max">Maximum </button>
+    </form>
+    <h2 id="output"></h2>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        $(document).ready(function(){
+            let num1 = document.getElementById("n1");
+            let num2 = document.getElementById("n2");
+            let num3 = document.getElementById("n3");
+            let output = document.getElementById("output");
+            $("#max").on("click",function(){
+                let n1 = parseFloat(num1.value);
+                let n2 = parseFloat(num2.value);
+                let n3 = parseFloat(num3.value);
+
+                if((n1 >= n2) && (n1 >= n3)){
+                    output.innerHTML = "Maximum : " + n1; 
+                }
+                else if((n2 >= n1) && (n2 >= n3)){
+                    output.innerHTML = "Maximum : " + n2; 
+                }
+                else{
+                    output.innerHTML = "Maximum : " + n3; 
+                }
+            });
+            $("#min").on("click",function(){
+                let n1 = parseFloat(num1.value);
+                let n2 = parseFloat(num2.value);
+                let n3 = parseFloat(num3.value);
+
+                if((n1 <= n2) && (n1 <= n3)){
+                    output.innerHTML = "Minimum : " + n1; 
+                }
+                else if((n2 <= n1) && (n2 <= n3)){
+                    output.innerHTML = "Minimum : " + n2; 
+                }
+                else{
+                    output.innerHTML = "Minimum : " + n3; 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
