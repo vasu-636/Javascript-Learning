@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+   <div class="form-card">
+  <h4 class="form-title">Sign Up</h4>
+  <form>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingName" placeholder="Full Name" required />
+      <label for="floatingName">Full Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingEmail" placeholder="Email" required />
+      <label for="floatingEmail">Email address</label>
+    </div>
+    <div class="mb-3 text-white">
+      <label class="form-label d-block mb-2">Gender</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+        <label class="form-check-label" for="genderMale">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" required>
+        <label class="form-check-label" for="genderFemale">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="genderOther" value="other" required>
+        <label class="form-check-label" for="genderOther">Other</label>
+      </div>
+    </div>
+    <div class="mb-3 text-white">
+      <label for="selectCity" class="form-label">Select City</label>
+      <select class="form-select bg-transparent form-floating" id="selectCity" required>
+        <option value="" disabled selected>Select your city</option>
+        <option value="newyork">Surat</option>
+        <option value="losangeles">Ahmedabad</option>
+        <option value="chicago">Vadodara</option>
+        <option value="houston">Navsari</option>
+        <option value="miami">Vapi</option>
+      </select>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating mb-4">
+      <input type="password" class="form-control" id="floatingConfirm" placeholder="Confirm Password"  />
+      <label for="floatingConfirm">Confirm Password</label>
+    </div>
+    <div class="form-floating mb-4">
+      <input type="date" class="form-control" id="floatingDOB" placeholder="Date Of Birth" required />
+      <label for="floatingDOB">Date Of Birth</label>
+    </div>
+    <button type="submit" class="btn btn-primary w-100" id="submit">Create Account</button>
+  </form>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/css/bootstrap.css"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
