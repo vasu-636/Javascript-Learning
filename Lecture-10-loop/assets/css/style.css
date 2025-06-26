@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+#box-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap to next line */
+    gap: 10px; /* Adds spacing between boxes */
+    padding: 20px;
+    /* justify-content: center; */
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover{
+    background-color: blue;
+}
+
+.container h1{
+    text-align: center;
+}
