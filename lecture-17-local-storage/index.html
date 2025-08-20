@@ -5,7 +5,7 @@
   <title>Student Form</title>
 </head>
 <body>
-  <h2>Enter Student Details</h2>
+  <h2 id="formTitle">Enter Student Details</h2>
   <form id="studentForm">
     <label>Name:</label>
     <input type="text" id="name" required><br><br>
@@ -13,26 +13,47 @@
     <label>Roll No:</label>
     <input type="text" id="roll" required><br><br>
     
-    <button type="submit">Save</button>
+    <button type="submit" id="submitBtn">Save</button>
   </form>
 
   <br>
   <a href="./user.html">Go to Student List</a>
 
   <script>
-    document.getElementById("studentForm").addEventListener("submit", function(e){
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let editIndex = localStorage.getItem("editIndex");
+    let form = document.getElementById("studentForm");
+    let submitBtn = document.getElementById("submitBtn");
+    let formTitle = document.getElementById("formTitle");
+
+    if (editIndex !== null) {
+      // Fill form with old values
+      let student = students[editIndex];
+      document.getElementById("name").value = student.name;
+      document.getElementById("roll").value = student.roll;
+      
+      // Change button text and title
+      submitBtn.textContent = "Update";
+      formTitle.textContent = "Update Student Details";
+    }
+
+    form.addEventListener("submit", function(e){
       e.preventDefault();
 
       let name = document.getElementById("name").value;
       let roll = document.getElementById("roll").value;
 
-      let students = JSON.parse(localStorage.getItem("students")) || [];
-      students.push({ name, roll });
+      if (editIndex !== null) {
+        // Update existing student
+        students[editIndex] = { name, roll };
+        localStorage.removeItem("editIndex"); // clear edit mode
+      } else {
+        // Add new student
+        students.push({ name, roll });
+      }
 
       localStorage.setItem("students", JSON.stringify(students));
-
-      alert("Student Saved!");
-      this.reset();
+      window.location.href = "./user.html"; // go back to list
     });
   </script>
 </body>
